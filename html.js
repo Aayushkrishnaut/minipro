@@ -1,4 +1,6 @@
-const URL = 'https://reqres.in/api/users?page=2';
+function fetchData(pageNo){
+
+URL = `https://reqres.in/api/users? ${pageNo}`
 
 fetch(URL)
     .then(res => res.json())
@@ -18,3 +20,4 @@ fetch(URL)
         document.getElementById("records").innerHTML = output;
     })
     .catch(error => console.error('Error fetching data:', error));
+}
